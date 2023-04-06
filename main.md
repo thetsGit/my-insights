@@ -36,4 +36,8 @@ Good points
 
 - Use to replace “import * as foo from bar” with “import foo from bar” which supports cleaner syntax
 
+## With React 
+
+In terms of React, we tend to use default exporting when it comes to component files (tsx, jsx) because it enforces the single responsibility rule, i.e, whenever we have multiple things to be exported from a single component file (jsx, tsx), it is a good time to refactor our files appropriately (note: we might have multiple components in a single component file but if we do have to export multiple components from a single tsx file, it is great to refactor your code like migrating the frequently used components to common folder).
+
 *NOTE: Most libraries tend to export their things in both default and named exporting ways to keep the module consumer use any importing style.*
