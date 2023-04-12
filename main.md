@@ -1,4 +1,5 @@
 
+
   
 # **ES6 Default vs Named exports (When and Why ?)**
 
@@ -20,16 +21,16 @@ So, today, I am going to compare and contrast them objectively based on my devel
 
 Good points
 
-- More Flexible and Simple Importing  
-- Disinclination toward triggering name conflicts (not needed to use the alias keyword ‘as’)
-- Cleaner syntax
+- More Flexible and Simple Importing style
+- Disinclination toward triggering name conflicts (Also, it is not needed to use the alias keyword ‘as’)
+- Cleaner syntax (apparently)
 
 Bad points
 
-- Not optimized access (can’t import partially)  
+- Not optimized access (partial importing is not supported)  
 - Not supporting tree shaking  
-- Being able to be used only once per module
-- Inconsistency of the imported names can lead to name confusion along with the growing code base 
+- Being able to be used only once per module (it can be good or bad in different context)
+- Inconsistency of the imported names can lead to name confusion as the code base grows
 
 ## Named export
 
@@ -42,8 +43,8 @@ Bad points
 Good points
 
 - Support  [tree shaking](https://web.dev/reduce-javascript-payloads-with-tree-shaking/#what_is_tree_shakingv)
-- Optimized importing due to its partial import nature
-- Being able to be used multiple times per module  
+- Optimized importing due to its partial importing nature
+- Being able to be used multiple times per module (it can be good or bad in different context)
 - Standardized importing
 - Better editor support (like name highlighting, and automatic renaming as the actual exported name is changed)
 
@@ -65,15 +66,19 @@ Yes! we might have multiple components in a single component file, but if we do 
 
 On the other hand, named export is quite practical to be used with like constant and util files due to its supported multiple and partial exporting nature. On top of that, it is widely used to implement the ["index js" pattern.](https://dev.to/fahadaminshovon/-how-to-use-indexjs-fileproperly-302f)
 
-> *ps: good points and bad points mentioned above might sound subjective at some points, and they can presumably be different from different
-> perspectives. And, most libraries tend to export their things in both
-> default and named exporting ways to let the module consumer use any
-> importing style (like both `import * from something` and `import
-> something from something` are the same) and to diminish related
-> confusion.*
+## Conclusion
+
+
+The good and bad points mentioned above might sound subjective at some points, and they can presumably be different from different perspectives. 
+Moreover, I have found out that certain developers and teams solely use named exporting in building up their modern javascript products. 
+
+In fact, most javascript libraries tend to export their things in both default and named exporting ways to let the module consumer use any importing style (like both `import * from something` and `import something from something` are the same) and to diminish extra work and confusion.
+
+At the end of the day, I sincerely hope that this blog will help anyone new to ES6 modules in making sense of it, as well as those who are already familiar with it.
 
 *Respectfully,
 Thet han
 #11th April 2023*
+
 
 
