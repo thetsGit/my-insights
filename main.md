@@ -1,10 +1,20 @@
 
   
-# **ES6 Default vs Named exports**
+# **ES6 Default vs Named exports (When and Why ?)**
 
 ## Prerequisites
 
-> You are supposed to be already familiar with [ES6 modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) and how to use them in advance because this blog is not about what is ES6 module and how to use them, but a discussion about when and why to use either ES6's named or default export. 
+> You are supposed to be already familiar with [ES6 modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)  and how to use them due to the fact that this blog is not about what is ES6 modules and how to use them, but rather about when and why to use either ES6’s named or default export.
+
+## Introduction
+
+In writing modern javascript codes, ES6 modules have been being crucial with the widespread use of javascript from building web pages to desktop and mobile apps, 2D/3D graphics and more for years.
+
+ As a javascript developer, deciding whether to use ES6 named or default exporting can be a pain in the neck when one has no clue about the benefits and drawbacks of each before putting them to use. 
+
+So, today, I am going to compare and contrast them objectively based on my development knowledge and experience thus far.
+
+> For the sake of reducing verbosity, listing style is deemed to be preferable to paragraphing style.
 
 ## Default export
 
@@ -32,7 +42,7 @@ Bad points
 Good points
 
 - Support  [tree shaking](https://web.dev/reduce-javascript-payloads-with-tree-shaking/#what_is_tree_shakingv)
-- Optimized importing due to its partial import nature.  
+- Optimized importing due to its partial import nature
 - Being able to be used multiple times per module  
 - Standardized importing
 - Better editor support (like name highlighting, and automatic renaming as the actual exported name is changed)
@@ -51,9 +61,19 @@ Otherwise, named exports are apparently used due to the above-mentioned edges.
 
 In terms of React, we tend to use default exporting when it comes to component files (tsx, jsx) because it enforces the single responsibility rule, i.e, whenever we have multiple things to be exported from a single component file (jsx, tsx), it is a good time to refactor our files appropriately. 
 
-Yes! we might have multiple components in a single component file, but if we do have to export multiple components or alike (objects, functions, or else) from a single jsx or tsx file, normally, it is great to refactor our file, like extracting the frequently used components or alike to a kinda common folder or alike where they can be exported partially via [index files](https://dev.to/fahadaminshovon/-how-to-use-indexjs-fileproperly-302f).
+Yes! we might have multiple components in a single component file, but if we do have to export several items (objects, functions, or anything) from a single jsx or tsx file, normally, it is great to refactor our file, like extracting the frequently used components or alike to a kinda common folder or alike where they can be exported partially via [index files](https://dev.to/fahadaminshovon/-how-to-use-indexjs-fileproperly-302f).
 
 On the other hand, named export is quite practical to be used with like constant and util files due to its supported multiple and partial exporting nature. On top of that, it is widely used to implement the ["index js" pattern.](https://dev.to/fahadaminshovon/-how-to-use-indexjs-fileproperly-302f)
 
-*ps: good points and bad points mentioned above might sound subjective at some points, and they can presumably be different from different perspectives. And, most libraries tend to export their things in both default and named exporting ways to let the module consumer use any importing style (like both `import * from something` and `import something from something` are the same) and to diminish confusion*
+> *ps: good points and bad points mentioned above might sound subjective at some points, and they can presumably be different from different
+> perspectives. And, most libraries tend to export their things in both
+> default and named exporting ways to let the module consumer use any
+> importing style (like both `import * from something` and `import
+> something from something` are the same) and to diminish related
+> confusion.*
+
+*Respectfully,
+Thet han
+#11th April 2023*
+
 
